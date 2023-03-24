@@ -1,0 +1,25 @@
+CREATE TABLE shoe_store (id INTEGER, name TEXT, quantity INTEGER, cost INTEGER, colour TEXT);
+
+INSERT INTO shoe_store VALUES (1,"yeezys",123,150,"purple");
+INSERT INTO shoe_store VALUES (2,"nike",95,69,"blue");
+INSERT INTO shoe_store VALUES (3,"converse",34,50,"green");
+INSERT INTO shoe_store VALUES (4,"puma",2,15,"black");
+INSERT INTO shoe_store VALUES (5,"jordans",66,1.50,"yellow");
+INSERT INTO shoe_store VALUES (6,"crocs",500,20,"blue");
+INSERT INTO shoe_store VALUES (7,"vans",30,90,"pink");
+INSERT INTO shoe_store VALUES (8,"boots",50,30,"grey");
+INSERT INTO shoe_store VALUES (9,"high heels",93,50,"red");
+INSERT INTO shoe_store VALUES (10,"slippers",32,40,"green");
+INSERT INTO shoe_store VALUES (11,"robot shoes",34,15,"white");
+INSERT INTO shoe_store VALUES (12,"clown shoes",40,50,"rainbow");
+INSERT INTO shoe_store VALUES (13,"ruby slippers",2,10000,"red");
+INSERT INTO shoe_store VALUES (14,"glass slipper",1,1000,"glass");
+INSERT INTO shoe_store VALUES (15,"flip flops",2,20000,"Gold");
+
+SELECT * FROM shoe_store;
+SELECT * FROM shoe_store ORDER BY cost;
+SELECT SUM(quantity) FROM shoe_store
+
+/* I have made a datatbase for a fictional shoe store. Within my store, I have created a table that contains information on all of the items I offer,
+including 5 columns to store relevant data. I have included 15 items in my store's inventory.
+To analyze the data, I have utilized select statements to order my items by price and provide at least one statistic related to the items. */
