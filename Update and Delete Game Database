@@ -1,0 +1,20 @@
+CREATE TABLE game_scores(player_id INTEGER, scores INTEGER);
+
+INSERT INTO game_scores VALUES (1,234);
+INSERT INTO game_scores VALUES (2,6700005);
+INSERT INTO game_scores VALUES (3,897);
+INSERT INTO game_scores VALUES (4,2775);
+INSERT INTO game_scores VALUES (5,43);
+INSERT INTO game_scores VALUES (6,890);
+INSERT INTO game_scores VALUES (7,2953);
+INSERT INTO game_scores VALUES (8,457);
+INSERT INTO game_scores VALUES (9,783);
+INSERT INTO game_scores VALUES (10,1000000);
+
+UPDATE game_scores SET scores = 69 WHERE player_id = 7;
+
+/* using UPDATE to update a game score */
+
+DELETE FROM game_scores WHERE scores > 10000;
+
+/* deleting game scores above the limit of 10000 using DELETE */
