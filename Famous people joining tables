@@ -1,0 +1,86 @@
+CREATE TABLE famous_people (id INTEGER, name TEXT);
+
+INSERT INTO famous_people VALUES (1,"Beyoncé");
+INSERT INTO famous_people VALUES (2,"Bruno Mars");
+INSERT INTO famous_people VALUES (3,"Michael Jackson");
+INSERT INTO famous_people VALUES (4,"Mariah Carey");
+INSERT INTO famous_people VALUES (5,"Rihanna");
+INSERT INTO famous_people VALUES (6,"Samuel L. Jackson");
+INSERT INTO famous_people VALUES (7,"Johnny Depp");
+INSERT INTO famous_people VALUES (8,"Leonardo DiCaprio");
+INSERT INTO famous_people VALUES (9,"Jennifer Lawrence");
+INSERT INTO famous_people VALUES (10,"Angelina Jolie");
+INSERT INTO famous_people VALUES (11,"Superman");
+INSERT INTO famous_people VALUES (12,"Spongebob");
+INSERT INTO famous_people VALUES (13,"Mickey Mouse");
+INSERT INTO famous_people VALUES (14,"Goku");
+INSERT INTO famous_people VALUES (15,"Rick");
+INSERT INTO famous_people VALUES (16,"Batman");
+INSERT INTO famous_people VALUES (17,"Robin");
+INSERT INTO famous_people VALUES (18,"Naruto");
+INSERT INTO famous_people VALUES (19,"Luffy");
+INSERT INTO famous_people VALUES (20,"Aang");
+INSERT INTO famous_people VALUES (21,"Peter Griffin");
+INSERT INTO famous_people VALUES (22,"Homer Simpson");
+INSERT INTO famous_people VALUES (23,"Finn");
+INSERT INTO famous_people VALUES (24,"Stan");
+INSERT INTO famous_people VALUES (25,"Sailor Moon");
+INSERT INTO famous_people VALUES (0,"NULL");
+
+CREATE TABLE movies (id INTEGER, title TEXT, actor_id INTEGER, year INTEGER, rating NUMERIC);
+
+INSERT INTO movies VALUES (1, 'Valentine''s Day',9, 2010, 5.7);
+INSERT INTO movies VALUES (2, 'Ocean''s Eleven',0, 2001, 7.7);
+INSERT INTO movies VALUES (3, 'This Is the End',5, 2013, 6.6);
+INSERT INTO movies VALUES (4, 'Dreamgirls',1, 2006, 6.5);
+INSERT INTO movies VALUES (5, 'Django Unchained',6, 2012, 8.4);
+INSERT INTO movies VALUES (6, 'Maleficent',10, 2014, 7.0);
+INSERT INTO movies VALUES (7, 'Pirates of the Caribbean: On Stranger Tides',7, 2011, 6.6);
+INSERT INTO movies VALUES (8, 'Zombieland: Double Tap',0, 2019, 6.7);
+INSERT INTO movies VALUES (9, 'The Other Boleyn Girl',0, 2008, 6.7);
+INSERT INTO movies VALUES (10, 'The Great Gatsby',8, 2013, 7.2);
+
+CREATE TABLE cartoons (id INTEGER, title TEXT,mc_id INTEGER, year INTEGER, episodes INTEGER, rating NUMERIC);
+
+INSERT INTO cartoons VALUES (1, 'Dragon Ball Z',14, 1989, 291, 8.7);
+INSERT INTO cartoons VALUES (2, 'Justice League Unlimited',11, 2004, 39, 8.8);
+INSERT INTO cartoons VALUES (3, 'Sailor Moon',25, 1992, 200, 7.7);
+INSERT INTO cartoons VALUES (4, 'SpongeBob SquarePants',12, 1999, 262, 8.1);
+INSERT INTO cartoons VALUES (5, 'Mickey Mouse Clubhouse',13, 2006, 125, 5.9);
+INSERT INTO cartoons VALUES (6, 'Avatar: The Last Airbender',15, 2005, 61, 9.2);
+INSERT INTO cartoons VALUES (7, 'Adventure Time',23, 2010, 283, 8.6);
+INSERT INTO cartoons VALUES (8, 'Rick and Morty',20, 2013, 41, 9.2);
+INSERT INTO cartoons VALUES (9, 'The Simpsons',22, 1989, 725, 8.6);
+INSERT INTO cartoons VALUES (10, 'Family Guy',21, 1999, 361, 8.1);
+INSERT INTO cartoons VALUES (11, 'South Park',24, 1997, 308, 8.7);
+INSERT INTO cartoons VALUES (12, 'Batman: The Animated Series',16, 1992, 85, 9.0);
+INSERT INTO cartoons VALUES (13, 'Teen Titans',17, 2003, 65, 7.8);
+INSERT INTO cartoons VALUES (14, 'Naruto',18, 2002, 720, 8.3);
+INSERT INTO cartoons VALUES (15, 'One Piece',19, 1999, 985, 8.6);
+
+CREATE TABLE songs (id INTEGER, name TEXT, artist_id INTEGER, release_year INTEGER, rating NUMERIC);
+
+INSERT INTO songs VALUES (1,'Crazy in Love',1,2003,8.2);
+INSERT INTO songs VALUES (2,'Single Ladies (Put a Ring on It)',1,2008,8.5);
+INSERT INTO songs VALUES (3,'Just the Way You Are',2,2010,8.1);
+INSERT INTO songs VALUES (4,'Uptown Funk',2,2014,8.7);
+INSERT INTO songs VALUES (5,'Billie Jean',3,1983,8.8);
+INSERT INTO songs VALUES (6,'Thriller',3,1982,8.9);
+INSERT INTO songs VALUES (7,'All I Want for Christmas Is You',4,1994,8.5);
+INSERT INTO songs VALUES (8,'We Belong Together',4,2005,8.2);
+INSERT INTO songs VALUES (9,'Umbrella',5,2007,8.4);
+INSERT INTO songs VALUES (10,'Diamonds',5,2012,8.3);
+
+/* created 4 tables one with the names and id of famous people
+and 3 others with movies, cartoons, and songs respectively
+including info like year, rating, etc */
+
+SELECT f.name AS "Actor/Actress", m.title AS 'Movie', m.year, m.rating FROM famous_people f JOIN movies m ON f.id = m.actor_id;
+
+/* using JOIN and ON to join the tables with the actor/actresses
+with the movies table to show what movie they're in */
+
+SELECT f.name AS 'Main Character', c.title AS 'TV Show', c.rating FROM famous_people f JOIN cartoons c ON f.id = c.mc_id ORDER BY rating DESC;
+
+/* joining the famous people table to the cartoons table
+to show the characters in each show for a nice human readable list */
